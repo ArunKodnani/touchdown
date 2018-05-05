@@ -16,24 +16,27 @@
         android:layout_height="130dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:text="Button" />
+        android:onClick="nextActivity"
+        android:text="Articles" />
 
     <Button
-        android:id="@+id/teams"
+        android:id="@+id/btnteams"
         android:layout_width="192dp"
         android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Button" />
+        android:onClick="nextActivity"
+        android:text="Teams"
+        android:textStyle="italic" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/afl"
         android:layout_width="match_parent"
         android:layout_height="43dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="139dp"
-        android:text="National Football League (NFL)"
+        android:layout_marginBottom="159dp"
+        android:text="Arena Football League (AFL)"
         android:textAlignment="center"
         android:textColor="@color/ic_launcher_background"
         android:textSize="24sp"
@@ -41,11 +44,11 @@
         android:typeface="normal" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/nfl"
         android:layout_width="match_parent"
         android:layout_height="43dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/today"
         android:text="National Football League (NFL)"
         android:textAlignment="center"
         android:textColor="@color/ic_launcher_background"
@@ -54,7 +57,7 @@
         android:typeface="normal" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/today"
         android:layout_width="match_parent"
         android:layout_height="43dp"
         android:layout_alignParentStart="true"
@@ -69,17 +72,21 @@
     <ListView
         android:id="@+id/teamslist1"
         android:layout_width="match_parent"
-        android:layout_height="113dp"
-        android:layout_above="@+id/textView2"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/nfl"
+        android:layout_above="@+id/afl"
+        android:background="#FFFFFF" />
 
     <ListView
         android:id="@+id/teamslist2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="-139dp" />
+        android:layout_below="@+id/afl"
+        android:layout_marginTop="-139dp"
+        android:background="#FFFFFF" />/>
+
 
 
 </RelativeLayout>

@@ -1,5 +1,7 @@
 package com.example.arunkodnani.touchdown;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,12 +15,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
 import com.amazonaws.mobile.client.AWSMobileClient;
 
 
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.AWSStartupHandler;
 import com.amazonaws.mobile.client.AWSStartupResult;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,15 +46,45 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        ListView lv = (ListView) findViewById(R.id.teamslist1);
+
+        // Instanciating an array list (you don't need to do this,
+        // you already have yours).
+        List<String> al = new ArrayList<String>();
+        al.add("Marcel vs Winslow");
+        al.add("Karan vs Akhil");
+        al.add("Marcel vs Winslow");
+        al.add("Karan vs Akhil");
+
+        // This is the array adapter, it takes the context of the activity as a
+        // first parameter, the type of list view as a second parameter and your
+        // array as a third parameter.
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_1,
+                al);
+
+        lv.setAdapter(arrayAdapter);
+
+        ListView lv2 = (ListView) findViewById(R.id.teamslist2);
+        lv2.setAdapter(arrayAdapter);
+        //lv.setTextColor(Color.BLACK);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                Intent intent = new Intent(MainActivity.this, TeamDetails.class);
+                startActivity(intent);
             }
         });
 
+        lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                Intent intent = new Intent(MainActivity.this, TeamDetails.class);
+                startActivity(intent);
+            }
+        });
+        /*
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -53,17 +92,18 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);*/
     }
 
     @Override
     public void onBackPressed() {
+        /*
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-        }
+        }*/
     }
 
     @Override
@@ -106,8 +146,27 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void nextActivity(View view) {
+        Intent intent;
+        if(view == findViewById(R.id.btnteams)) {
+            intent = new Intent(this, TeamDetails.class);
+            startActivity(intent);
+        }
+        else if (view == findViewById(R.id.articles)) {
+            intent = new Intent(this, Articles.class);
+            startActivity(intent);
+
+        }
+
+    }
+    public void goToHome(View view) {
+        Intent intent;
+        intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
