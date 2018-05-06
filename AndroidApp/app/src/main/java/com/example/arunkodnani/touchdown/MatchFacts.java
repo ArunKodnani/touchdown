@@ -7,11 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /* Fragment used as page 1 */
 public class MatchFacts extends Fragment {
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -23,12 +28,12 @@ public class MatchFacts extends Fragment {
         // you already have yours).
 
 
-
+        String id=TeamDetails.id;
+        Toast.makeText(getActivity(),"In MatchFacts",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(),TeamDetails.id,Toast.LENGTH_SHORT).show();
         List<String> al = new ArrayList<>();
-        al.add("Marcel vs Winslow");
-        al.add("Karan vs Akhil");
-        al.add("Marcel vs Winslow");
-        al.add("Karan vs Akhil");
+        al.add("Match Facts mofo");
+
 
         // This is the array adapter, it takes the context of the activity as a
         // first parameter, the type of list view as a second parameter and your

@@ -7,12 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /* Fragment used as page 1 */
 public class Head2Head extends Fragment {
-
+    public static String id;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_head2_head, container, false);
@@ -22,13 +24,12 @@ public class Head2Head extends Fragment {
         // Instanciating an array list (you don't need to do this,
         // you already have yours).
 
-
-
+        id=TeamDetails.id;
+        Toast.makeText(getActivity(),"In head2Head",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(),TeamDetails.id,Toast.LENGTH_SHORT).show();
         List<String> al = new ArrayList<>();
-        al.add("Mar vs Winslow");
-        al.add("Kar vs Akhil");
-        al.add("Mar vs Winslow");
-        al.add("Kar vs Akhil");
+        al.add("Mead2Head mofo");
+
 
         // This is the array adapter, it takes the context of the activity as a
         // first parameter, the type of list view as a second parameter and your

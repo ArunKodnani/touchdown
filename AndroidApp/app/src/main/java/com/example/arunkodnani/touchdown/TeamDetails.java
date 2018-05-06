@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.widget.*;
+import android.util.Log;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 //import org.weibeld.example.R;
@@ -15,7 +17,7 @@ import android.widget.Toolbar;
 public class TeamDetails extends AppCompatActivity {
 
     private final String LOG_TAG = MainActivity.class.getSimpleName();
-
+    public static String id;
     // Titles of the individual pages (displayed in tabs)
     private final String[] PAGE_TITLES = new String[] {
             "Match Facts",
@@ -26,8 +28,8 @@ public class TeamDetails extends AppCompatActivity {
     // The fragments that are used as the individual pages
     private final Fragment[] PAGES = new Fragment[] {
             new MatchFacts(),
-            new Head2Head(),
-            new LineUp()
+            new LineUp(),
+            new Head2Head()
     };
 
     // The ViewPager is responsible for sliding pages (fragments) in and out upon user input
@@ -37,7 +39,9 @@ public class TeamDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_details);
-
+        id = getIntent().getStringExtra("id");
+        //Toast.makeText(getApplicationContext(),id,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"In TeamDetails",Toast.LENGTH_LONG).show();
         // Set the Toolbar as the activity's app bar (instead of the default ActionBar)
         Toolbar toolbar = findViewById(R.id.toolbar);
         setActionBar(toolbar);
@@ -56,7 +60,7 @@ public class TeamDetails extends AppCompatActivity {
 
 
     /* PagerAdapter for supplying the ViewPager with the pages (fragments) to display. */
-    public class MyPagerAdapter extends FragmentPagerAdapter {
+    class MyPagerAdapter extends FragmentPagerAdapter {
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -64,6 +68,7 @@ public class TeamDetails extends AppCompatActivity {
 
         @Override
         public android.support.v4.app.Fragment getItem(int position) {
+            System.out.println("Debug: Position getitem "+position);
             return PAGES[position];
         }
 

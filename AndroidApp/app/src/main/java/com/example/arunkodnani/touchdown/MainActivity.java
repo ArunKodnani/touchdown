@@ -2,7 +2,9 @@ package com.example.arunkodnani.touchdown;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
@@ -18,6 +20,13 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.io.*;
+import java.net.*;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Scanner;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
 
@@ -26,12 +35,20 @@ import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.AWSStartupHandler;
 import com.amazonaws.mobile.client.AWSStartupResult;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    static String charset = java.nio.charset.StandardCharsets.UTF_8.name();
+    static List<String> al = new ArrayList<String>();
+    XmlPullParserFactory xmlFactoryObject;
+    XmlPullParser myparser;
+    ListView lv2,lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,15 +63,33 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ListView lv = (ListView) findViewById(R.id.teamslist1);
+        lv = (ListView) findViewById(R.id.teamslist1);
+
+        String url = "https://api.sportradar.us/nfl-ot2/games/2017/PST/03/schedule.xml";
+        String api_key ="rr7maet8u7uataccpcqt5e5j";
+        String query="";
+        try {
+            query = String.format("api_key=%s", URLEncoder.encode(api_key,charset));
+        } catch (UnsupportedEncodingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+
+        games callAPI = new games();
+        Object response = null;
+
+        response = callAPI.execute(new Object[]{url,query,this});
+        while (response==null){
+
+        }
+        //Object response = callAPI.doInBackground(new String[]{url,query});
+        System.out.println("Debug: response in main thread"+response.toString());
 
         // Instanciating an array list (you don't need to do this,
         // you already have yours).
-        List<String> al = new ArrayList<String>();
-        al.add("Marcel vs Winslow");
-        al.add("Karan vs Akhil");
-        al.add("Marcel vs Winslow");
-        al.add("Karan vs Akhil");
+
+
 
         // This is the array adapter, it takes the context of the activity as a
         // first parameter, the type of list view as a second parameter and your
@@ -66,7 +101,7 @@ public class MainActivity extends AppCompatActivity
 
         lv.setAdapter(arrayAdapter);
 
-        ListView lv2 = (ListView) findViewById(R.id.teamslist2);
+        lv2 = (ListView) findViewById(R.id.teamslist2);
         lv2.setAdapter(arrayAdapter);
         //lv.setTextColor(Color.BLACK);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -93,6 +128,89 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);*/
+    }
+
+    public void updateDisplayList(Object result){
+
+        final HashMap<String,String> gameStore = new HashMap<>();
+        try {
+            xmlFactoryObject = XmlPullParserFactory.newInstance();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        }
+        try {
+            myparser = xmlFactoryObject.newPullParser();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        }
+        InputStream stream = new ByteArrayInputStream(result.toString().getBytes(StandardCharsets.UTF_8));
+        try {
+            myparser.setInput(stream, null);
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        }
+
+        int event = 0;
+        String gameID="";
+        String hometeam="",awayteam="";
+        try {
+            event = myparser.getEventType();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        }
+        while (event != XmlPullParser.END_DOCUMENT)  {
+            String name=myparser.getName();
+            switch (event){
+                case XmlPullParser.START_TAG:
+                    if(name.equals("game")){
+                        gameID = myparser.getAttributeValue(null,"id");
+                    }
+                    break;
+
+                case XmlPullParser.END_TAG:
+                    if(name.equals("home")){
+                        hometeam = myparser.getAttributeValue(null,"name");
+                    }
+                    else if(name.equals("away")){
+                        awayteam =  myparser.getAttributeValue(null,"name");
+                        String gameName = hometeam+ " Vs "+awayteam+" "+gameID;
+                        al.add(gameName);
+                        gameStore.put(gameName,gameID);
+                    }
+                    break;
+            }
+            try {
+                event = myparser.next();
+            } catch (XmlPullParserException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        //al.add(result.toString());
+        System.out.println("Debug: Display List Updated");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                MainActivity.this,
+                android.R.layout.simple_list_item_1,
+                al);
+
+        lv.setAdapter(arrayAdapter);
+
+        lv2.setAdapter(arrayAdapter);
+        //lv.setTextColor(Color.BLACK);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                String valueToSend = gameStore.get(al.get(position));
+//                Toast.makeText(getApplicationContext(),valueToSend,Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, TeamDetails.class);
+                intent.putExtra("id",valueToSend);
+                startActivity(intent);
+            }
+        });
+        return;
     }
 
     @Override
@@ -168,5 +286,16 @@ public class MainActivity extends AppCompatActivity
         Intent intent;
         intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public static String requestApi(String url,String query) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL(url + "?" + query).openConnection();
+        connection.setRequestProperty("Accept-Charset", charset);
+        InputStream response = connection.getInputStream();
+        try (Scanner scanner = new Scanner(response)) {
+            String responseBody = scanner.useDelimiter("\\A").next();
+            //System.out.println(responseBody);
+            return responseBody;
+        }
     }
 }
