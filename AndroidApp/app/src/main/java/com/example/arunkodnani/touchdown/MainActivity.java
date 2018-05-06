@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        al.clear();
         lv = (ListView) findViewById(R.id.teamslist1);
 
         String url = "https://api.sportradar.us/nfl-ot2/games/2017/PST/03/schedule.xml";

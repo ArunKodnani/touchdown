@@ -1,5 +1,6 @@
 package com.example.arunkodnani.touchdown;
 
+import android.content.Intent;
 import android.support.v4.app.*;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -82,5 +83,21 @@ public class TeamDetails extends AppCompatActivity {
             return PAGE_TITLES[position];
         }
 
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed(); // this can go before or after your stuff below
+        // do your stuff when the back button is pressed
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        // super.onBackPressed(); calls finish(); for you
+
+        // clear your SharedPreferences
+        getSharedPreferences("preferenceName",0).edit().clear().commit();
     }
 }
