@@ -101,9 +101,7 @@ public class MainActivity extends AppCompatActivity
 
         lv.setAdapter(arrayAdapter);
 
-        lv2 = (ListView) findViewById(R.id.teamslist2);
-        lv2.setAdapter(arrayAdapter);
-        //lv.setTextColor(Color.BLACK);
+        //lv.setTextColor(Color.WHITE);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
@@ -112,13 +110,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
-                Intent intent = new Intent(MainActivity.this, TeamDetails.class);
-                startActivity(intent);
-            }
-        });
+
         /*
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

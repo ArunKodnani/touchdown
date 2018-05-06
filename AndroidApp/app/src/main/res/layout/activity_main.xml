@@ -16,8 +16,12 @@
         android:layout_height="130dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:background="#0066cc"
         android:onClick="nextActivity"
-        android:text="Articles" />
+        android:text="Articles"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp" />
+
 
     <Button
         android:id="@+id/btnteams"
@@ -25,23 +29,11 @@
         android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:background="#0077b3"
         android:onClick="nextActivity"
-        android:text="Teams"
-        android:textStyle="italic" />
-
-    <TextView
-        android:id="@+id/afl"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="159dp"
-        android:text="Arena Football League (AFL)"
-        android:textAlignment="center"
-        android:textColor="@color/ic_launcher_background"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:typeface="normal" />
+        android:text="TEAMS"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/nfl"
@@ -73,20 +65,14 @@
         android:id="@+id/teamslist1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/afl"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/nfl"
-        android:layout_above="@+id/afl"
-        android:background="#FFFFFF" />
+        android:background="#ffffff" /><![CDATA[
 
-    <ListView
-        android:id="@+id/teamslist2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/afl"
-        android:layout_marginTop="-139dp"
-        android:background="#FFFFFF" />/>
+    />
 
 
 
+]]>
 </RelativeLayout>
