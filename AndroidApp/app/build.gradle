@@ -19,6 +19,7 @@ android {
 }
 
 dependencies {
+
     implementation('com.amazonaws:aws-android-sdk-mobile-client:2.6.+@aar') { transitive = true }
     // Mobile Client for initializing the SDK
     implementation('com.amazonaws:aws-android-sdk-mobile-client:2.6.+@aar') { transitive = true }
@@ -27,6 +28,9 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation('com.amazonaws:aws-android-sdk-auth-userpools:2.6.+@aar') { transitive = true }
 
+    // Compile a lambda
+    compile 'com.amazonaws:aws-android-sdk-lambda:2.2.+'
+    implementation 'com.amazonaws:aws-android-sdk-lambda:2.6.+'
     // Sign in UI Library
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation('com.amazonaws:aws-android-sdk-auth-ui:2.6.+@aar') { transitive = true }

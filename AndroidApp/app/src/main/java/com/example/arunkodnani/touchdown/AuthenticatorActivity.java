@@ -8,14 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration;
 import com.amazonaws.mobile.auth.ui.SignInUI;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.AWSStartupHandler;
 import com.amazonaws.mobile.client.AWSStartupResult;
+import com.amazonaws.regions.Regions;
 
 public class AuthenticatorActivity extends AppCompatActivity {
 
+    public static CognitoCachingCredentialsProvider credentialsProvider= null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,12 @@ public class AuthenticatorActivity extends AppCompatActivity {
                                 .canCancel(true)
                                 .build();
                 SignInUI signinUI = (SignInUI) AWSMobileClient.getInstance().getClient(AuthenticatorActivity.this, SignInUI.class);
+                credentialsProvider = new CognitoCachingCredentialsProvider(
+                        getApplicationContext(), // Context
+                        "us-east-1:afea43de-7631-4f76-99f4-8db0021db6f3", // Identity Pool ID
+                       Regions.US_EAST_1 // Region
+                );
+                //System.out.println("Check credentials: "+credentialsProvider.getIdentityId()+" " +credentialsProvider.getIdentityPoolId());
                 signinUI.login(AuthenticatorActivity.this, MainActivity.class).authUIConfiguration(config).execute();
             }
         }).execute();

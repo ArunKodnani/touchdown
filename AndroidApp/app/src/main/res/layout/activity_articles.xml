@@ -12,28 +12,37 @@
 
     <Button
         android:id="@+id/articles"
-        android:layout_width="196dp"
+        android:layout_width="212dp"
         android:layout_height="130dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:text="Articles" />
+        android:background="#0066cc"
+        android:onClick="nextActivity"
+        android:text="Articles"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp" />
+
 
     <Button
-        android:id="@+id/teams"
-        android:layout_width="192dp"
+        android:id="@+id/btnteams"
+        android:layout_width="212dp"
         android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:onClick="goToHome"
-        android:text="Teams" />
+        android:background="#0077b3"
+        android:onClick="nextActivity"
+        android:text="TEAMS"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/topArticles"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="63dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/articles"
         android:text="Top articles"
+        android:background="#007399"
         android:textAlignment="center"
         android:textColor="@color/ic_launcher_background"
         android:textSize="30sp"
@@ -44,10 +53,12 @@
     <ListView
         android:id="@+id/teamslist2"
         android:layout_width="match_parent"
-        android:layout_height="339dp"
+        android:layout_height="319dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="172dp" />
+        android:layout_below="@+id/topArticles"
+        android:layout_marginTop="192dp"
+        android:background="#b3d9ff" />
 
 
 </RelativeLayout>

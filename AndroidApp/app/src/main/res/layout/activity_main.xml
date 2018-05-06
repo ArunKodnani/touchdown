@@ -12,7 +12,7 @@
 
     <Button
         android:id="@+id/articles"
-        android:layout_width="196dp"
+        android:layout_width="212dp"
         android:layout_height="130dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
@@ -25,12 +25,11 @@
 
     <Button
         android:id="@+id/btnteams"
-        android:layout_width="192dp"
+        android:layout_width="212dp"
         android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="#0077b3"
-        android:onClick="nextActivity"
         android:text="TEAMS"
         android:textColor="#FFFFFF"
         android:textSize="36sp" />
@@ -38,10 +37,11 @@
     <TextView
         android:id="@+id/nfl"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="63dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/today"
         android:text="National Football League (NFL)"
+        android:background="#007399"
         android:textAlignment="center"
         android:textColor="@color/ic_launcher_background"
         android:textSize="24sp"
@@ -51,10 +51,11 @@
     <TextView
         android:id="@+id/today"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="63dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/articles"
         android:text="TODAY"
+        android:background="#0000cc"
         android:textAlignment="center"
         android:textColor="@color/ic_launcher_background"
         android:textSize="30sp"
@@ -65,14 +66,7 @@
         android:id="@+id/teamslist1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/afl"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/nfl"
-        android:background="#ffffff" /><![CDATA[
-
-    />
-
-
-
-]]>
+        android:background="#ffffff" />
 </RelativeLayout>

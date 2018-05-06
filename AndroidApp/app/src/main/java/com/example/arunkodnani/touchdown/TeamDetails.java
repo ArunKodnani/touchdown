@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.widget.*;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -99,5 +100,10 @@ public class TeamDetails extends AppCompatActivity {
 
         // clear your SharedPreferences
         getSharedPreferences("preferenceName",0).edit().clear().commit();
+    }
+    public void goToHome(View view) {
+        Intent intent;
+        intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

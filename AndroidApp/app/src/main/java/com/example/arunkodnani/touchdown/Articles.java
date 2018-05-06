@@ -76,6 +76,7 @@ public class Articles extends AppCompatActivity {
         JSONObject data = almostdata.getJSONObject("data");
         JSONArray names = data.names();
 
+        al.add(AuthenticatorActivity.credentialsProvider.getIdentityId());
         for(int i=0;i<names.length();i++){
             JSONArray articleArray = data.getJSONArray(names.getString(i));
             JSONObject articleObject = articleArray.getJSONObject(0);

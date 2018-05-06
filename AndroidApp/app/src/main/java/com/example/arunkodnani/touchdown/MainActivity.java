@@ -52,13 +52,13 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("Check credentials: "+AuthenticatorActivity.credentialsProvider.getIdentityId()+" ");
         AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
             @Override
             public void onComplete(AWSStartupResult awsStartupResult) {
                 Log.d("MainActivity", "AWSMobileClient is instantiated and you are connected to AWS!");
             }
         }).execute();
-
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
