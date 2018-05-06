@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity
 
         lv.setAdapter(arrayAdapter);
 
-        lv2.setAdapter(arrayAdapter);
+        //lv2.setAdapter(arrayAdapter);
         //lv.setTextColor(Color.BLACK);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

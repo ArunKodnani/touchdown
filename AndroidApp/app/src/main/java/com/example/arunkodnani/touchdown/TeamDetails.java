@@ -23,7 +23,7 @@ public class TeamDetails extends AppCompatActivity {
     private final String[] PAGE_TITLES = new String[] {
             "Match Facts",
             "Line up",
-            "Head-2-Head"
+            "Some Other stuff"
     };
 
     // The fragments that are used as the individual pages

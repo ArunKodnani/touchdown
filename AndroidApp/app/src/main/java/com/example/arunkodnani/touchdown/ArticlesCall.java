@@ -2,6 +2,8 @@ package com.example.arunkodnani.touchdown;
 
 import android.os.AsyncTask;
 
+import org.json.JSONException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -10,13 +12,12 @@ import java.util.Scanner;
 
 import static com.example.arunkodnani.touchdown.MainActivity.charset;
 
-public class LineUpCall extends AsyncTask {
-    LineUp lu;
-
+public class ArticlesCall extends AsyncTask {
+    Articles a;
     @Override
     protected Object doInBackground(Object[] objects) {
         System.out.println("Debig: input to async call"+objects[0]+" "+objects[1]);
-        lu = (LineUp) objects[2];
+        a = (Articles) objects[2];
         HttpURLConnection connection = null;
         try {
             connection = (HttpURLConnection) new URL(objects[0].toString() + "?" + objects[1].toString()).openConnection();
@@ -44,7 +45,11 @@ public class LineUpCall extends AsyncTask {
     }
 
     protected void onPostExecute(Object result) {
-        lu.updateDisplayList(result);
+        try {
+            a.updateDisplayList(result);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }
