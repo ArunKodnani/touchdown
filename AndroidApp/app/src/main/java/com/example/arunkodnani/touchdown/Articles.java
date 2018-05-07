@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.regions.Regions;
@@ -17,6 +19,7 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Articles extends AppCompatActivity {
@@ -68,6 +71,7 @@ public class Articles extends AppCompatActivity {
     }
 
     public void updateDisplayList(Object result) throws JSONException{
+        final HashMap<String,String> summaries = new HashMap<>();
         JSONObject reader=null;
         reader = new JSONObject(result.toString());
         JSONObject messages = reader.getJSONObject("messages");
@@ -81,6 +85,7 @@ public class Articles extends AppCompatActivity {
             JSONArray articleArray = data.getJSONArray(names.getString(i));
             JSONObject articleObject = articleArray.getJSONObject(0);
             al.add(articleObject.getString("Title"));
+            summaries.put(articleObject.getString("Title"),articleObject.getString("Summary"));
         }
         System.out.println("Debug:  "+names.toString());
         al.add(names.toString());
@@ -93,6 +98,14 @@ public class Articles extends AppCompatActivity {
                 al);
 
         lv.setAdapter(arrayAdapter);
+
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapter, View view, int position, long arg) {
+                Toast.makeText(getApplicationContext(),summaries.get(al.get(position)),Toast.LENGTH_LONG).show();
+                return true;
+            }
+        });
 
         return;
 
