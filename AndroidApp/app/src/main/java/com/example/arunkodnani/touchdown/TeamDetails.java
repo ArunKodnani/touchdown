@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v4.widget.*;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -42,6 +43,12 @@ public class TeamDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_details);
         id = getIntent().getStringExtra("id");
+        String name = getIntent().getStringExtra("name");
+
+        //Set button text to team name
+        Button mButton=(Button)findViewById(R.id.team12);
+        mButton.setText(name);
+
         //Toast.makeText(getApplicationContext(),id,Toast.LENGTH_LONG).show();
         Toast.makeText(getApplicationContext(),"In TeamDetails",Toast.LENGTH_LONG).show();
         // Set the Toolbar as the activity's app bar (instead of the default ActionBar)
@@ -58,6 +65,12 @@ public class TeamDetails extends AppCompatActivity {
         // and when the ViewPager switches to a new page, the corresponding tab is selected)
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(mViewPager);
+    }
+
+    public void gotoHome(View view) {
+        Intent intent;
+        intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 
@@ -100,10 +113,5 @@ public class TeamDetails extends AppCompatActivity {
 
         // clear your SharedPreferences
         getSharedPreferences("preferenceName",0).edit().clear().commit();
-    }
-    public void goToHome(View view) {
-        Intent intent;
-        intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 }

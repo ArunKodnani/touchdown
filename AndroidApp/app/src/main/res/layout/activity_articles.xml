@@ -12,20 +12,25 @@
 
     <Button
         android:id="@+id/articles"
-        android:layout_width="212dp"
+        android:layout_width="wrap_content"
         android:layout_height="130dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:background="#0066cc"
         android:onClick="nextActivity"
         android:text="Articles"
+        android:layout_alignLeft="@id/fakeView"
         android:textColor="#FFFFFF"
         android:textSize="36sp" />
 
+    <View android:id="@+id/fakeView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"/>
 
     <Button
         android:id="@+id/btnteams"
-        android:layout_width="212dp"
+        android:layout_width="wrap_content"
         android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -33,6 +38,7 @@
         android:onClick="nextActivity"
         android:text="TEAMS"
         android:textColor="#FFFFFF"
+        android:layout_alignRight="@id/fakeView"
         android:textSize="36sp" />
 
     <TextView
@@ -42,7 +48,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/articles"
         android:text="Top articles"
-        android:background="#007399"
+        android:background="#000000"
         android:textAlignment="center"
         android:textColor="@color/ic_launcher_background"
         android:textSize="30sp"

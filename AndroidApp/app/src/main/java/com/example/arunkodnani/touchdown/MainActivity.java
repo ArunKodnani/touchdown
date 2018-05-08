@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity
     static List<String> al = new ArrayList<String>();
     XmlPullParserFactory xmlFactoryObject;
     XmlPullParser myparser;
-    ListView lv2,lv;
+    ListView lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity
                     }
                     else if(name.equals("away")){
                         awayteam =  myparser.getAttributeValue(null,"name");
-                        String gameName = hometeam+ " Vs "+awayteam+" "+gameID;
+                        String gameName = hometeam+ " Vs "+awayteam;
                         al.add(gameName);
                         gameStore.put(gameName,gameID);
                     }
@@ -196,9 +196,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
                 String valueToSend = gameStore.get(al.get(position));
+                String name = al.get(position);
 //                Toast.makeText(getApplicationContext(),valueToSend,Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, TeamDetails.class);
                 intent.putExtra("id",valueToSend);
+                intent.putExtra("name",name);
                 startActivity(intent);
             }
         });

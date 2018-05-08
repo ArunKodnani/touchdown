@@ -3,16 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include
-        layout="@layout/app_bar_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+    <View android:id="@+id/fakeView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"/>
 
     <Button
         android:id="@+id/articles"
-        android:layout_width="212dp"
+        android:layout_width="wrap_content"
         android:layout_height="130dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
@@ -20,19 +18,21 @@
         android:onClick="nextActivity"
         android:text="Articles"
         android:textColor="#FFFFFF"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:layout_alignLeft="@id/fakeView"/>
 
 
     <Button
         android:id="@+id/btnteams"
-        android:layout_width="212dp"
+        android:layout_width="wrap_content"
         android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="#0077b3"
         android:text="TEAMS"
         android:textColor="#FFFFFF"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:layout_alignRight="@id/fakeView"/>
 
     <TextView
         android:id="@+id/nfl"
@@ -40,10 +40,10 @@
         android:layout_height="63dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/today"
+        android:background="#1b52b7"
         android:text="National Football League (NFL)"
-        android:background="#007399"
         android:textAlignment="center"
-        android:textColor="@color/ic_launcher_background"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="normal" />
@@ -54,10 +54,10 @@
         android:layout_height="63dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/articles"
+        android:background="#000000"
         android:text="TODAY"
-        android:background="#0000cc"
         android:textAlignment="center"
-        android:textColor="@color/ic_launcher_background"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="normal" />
@@ -68,5 +68,5 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/nfl"
-        android:background="#ffffff" />
+        android:background="#bde9f8" />
 </RelativeLayout>

@@ -17,7 +17,7 @@
         android:onClick="gotoHome"
         android:text="Team 1 - Team 2"
         android:textColor="#ffffff"
-        android:textSize="36sp" />
+        android:textSize="20sp" />
 
     <android.widget.Toolbar
         android:id="@+id/toolbar"
