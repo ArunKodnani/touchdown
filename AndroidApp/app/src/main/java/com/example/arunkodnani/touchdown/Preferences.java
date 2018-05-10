@@ -108,7 +108,7 @@ public class Preferences extends AppCompatActivity {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-            Toast.makeText(Preferences.this,query,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Preferences.this,query,Toast.LENGTH_SHORT).show();
             PreferencesCall callAPI = new PreferencesCall();
             Object response = null;
             response =callAPI.execute(new Object[]{url,query,this});
