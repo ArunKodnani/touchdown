@@ -72,7 +72,8 @@ public class Articles extends AppCompatActivity {
 
     public void updateDisplayList(Object result) throws JSONException{
         final HashMap<String,String> summaries = new HashMap<>();
-        final HashMap<String,String> articleid = new HashMap<>();
+        final HashMap<String,String> articleidmap = new HashMap<>();
+        final HashMap<String,String> urlMap = new HashMap<>();
         JSONObject reader=null;
         reader = new JSONObject(result.toString());
         JSONObject messages = reader.getJSONObject("messages");
@@ -87,7 +88,8 @@ public class Articles extends AppCompatActivity {
             JSONObject articleObject = articleArray.getJSONObject(0);
             al.add(articleObject.getString("Title"));
             summaries.put(articleObject.getString("Title"),articleObject.getString("Summary"));
-            //summaries.put(articleObject.getString("Title"),names.getString(i));
+            articleidmap.put(articleObject.getString("Title"),articleObject.getString("id"));
+            urlMap.put(articleObject.getString("Title"),articleObject.getString("URL"));
         }
         System.out.println("Debug:  "+names.toString());
         al.add(names.toString());
@@ -104,8 +106,25 @@ public class Articles extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                String url = "https://bvlxit8h9a.execute-api.us-east-1.amazonaws.com/BetaStage/insertclick";
+                String userID =AuthenticatorActivity.credentialsProvider.getIdentityId();
+                String articleID = articleidmap.get(al.get(position));
+                String query="";
+                try {
+                    query = String.format("userID=%s", URLEncoder.encode(userID,charset));
+                    query = query+"&"+String.format("articleID=%s", URLEncoder.encode(articleID,charset));
+                } catch (UnsupportedEncodingException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+
+                ClickCall callAPI = new ClickCall();
+                Object response = null;
+                response =callAPI.execute(new Object[]{url,query,this});
+
                 Intent intent = new Intent(Articles.this, Webviewer.class);
-                intent.putExtra("id","http://www.tutorialspoint.com");
+                intent.putExtra("id",urlMap.get(al.get(position)));
                 startActivity(intent);
             }
         });

@@ -92,5 +92,26 @@ public class Preferences extends AppCompatActivity {
         }
 
         Toast.makeText(Preferences.this,users.toString(),Toast.LENGTH_SHORT).show();
+        for(String tosend: users){
+            String url = "https://bvlxit8h9a.execute-api.us-east-1.amazonaws.com/BetaStage/insertpreference";
+            String userID =AuthenticatorActivity.credentialsProvider.getIdentityId();
+            String query="";
+            try {
+                query = String.format("userID=%s", URLEncoder.encode(userID,charset));
+                query = query+"&"+String.format("preference=%s", URLEncoder.encode(tosend,charset));
+            } catch (UnsupportedEncodingException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            Toast.makeText(Preferences.this,query,Toast.LENGTH_SHORT).show();
+            PreferencesCall callAPI = new PreferencesCall();
+            Object response = null;
+            response =callAPI.execute(new Object[]{url,query,this});
+        }
+
+        Intent intent;
+        intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
+
     }
 }
