@@ -49,16 +49,17 @@ public class FirstLogonCall extends AsyncTask {
 
     protected void onPostExecute(Object result) {
         System.out.println("Debug: Yes or No "+result.toString());
-     if(result.toString().equals("\"Yes\""))
+     if(result.toString().equals("\"yes\""))
         {
             Intent intent;
-            intent = new Intent(w, Preferences.class);
+            intent = new Intent(w, MainActivity.class);
             w.startActivity(intent);
         }
         else
         {
+
             Intent intent;
-            intent = new Intent(w, MainActivity.class);
+            intent = new Intent(w, Preferences.class);
             w.startActivity(intent);
         }
         return;

@@ -45,7 +45,8 @@ public class PreferencesCall extends AsyncTask {
     }
 
     protected void onPostExecute(Object result) {
-        a.updateDisplayList(result);
+
+        //a.updateDisplayList(result);
     }
 
 }

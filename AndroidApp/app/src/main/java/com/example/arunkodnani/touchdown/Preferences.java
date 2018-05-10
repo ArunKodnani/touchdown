@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -25,28 +26,28 @@ import java.util.List;
 public class Preferences extends AppCompatActivity {
 
     static String charset = java.nio.charset.StandardCharsets.UTF_8.name();
-    static List<String> al = new ArrayList<String>();
-    XmlPullParserFactory xmlFactoryObject;
-    XmlPullParser myparser;
-    CheckBox team1,team2,team3,team4,team;
+    static List<String> users = new ArrayList<String>();
+
+    CheckBox team1,team2,team3,team4,team5,team6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences);
 
-        team = (CheckBox) findViewById(R.id.team);
+        team5 = (CheckBox) findViewById(R.id.team5);
         team1 = (CheckBox) findViewById(R.id.team1);
         team2 = (CheckBox) findViewById(R.id.team2);
         team3 = (CheckBox) findViewById(R.id.team3);
         team4 = (CheckBox) findViewById(R.id.team4);
+        team6 = (CheckBox) findViewById(R.id.team6);
 
-        String user= AuthenticatorActivity.credentialsProvider.getIdentityId();
+        String user = AuthenticatorActivity.credentialsProvider.getIdentityId();
         //TO DO  Check if the user exists in the database
 
         String url = "https://bvlxit8h9a.execute-api.us-east-1.amazonaws.com/BetaStage/getclicks";
-        String query="";
+        String query = "";
         try {
-            query = String.format("userID=%s", URLEncoder.encode(user,charset));
+            query = String.format("userID=%s", URLEncoder.encode(user, charset));
         } catch (UnsupportedEncodingException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -55,70 +56,41 @@ public class Preferences extends AppCompatActivity {
 
         PreferencesCall callAPI = new PreferencesCall();
         Object response = null;
-        response =callAPI.execute(new Object[]{url,query,this});
+        response = callAPI.execute(new Object[]{url, query, this});
     }
-    public void updateDisplayList(Object result){
 
-        final HashMap<String,String> gameStore = new HashMap<>();
-        try {
-            xmlFactoryObject = XmlPullParserFactory.newInstance();
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
+    public void sendTeams(View view) {
+        if(team1.isChecked())
+        {
+            String text=team1.getText().toString();
+            users.add(text);
         }
-        try {
-            myparser = xmlFactoryObject.newPullParser();
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
+        if(team2.isChecked())
+        {
+            String text=team2.getText().toString();
+            users.add(text);
         }
-        InputStream stream = new ByteArrayInputStream(result.toString().getBytes(StandardCharsets.UTF_8));
-        try {
-            myparser.setInput(stream, null);
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
+        if(team3.isChecked())
+        {
+            String text=team3.getText().toString();
+            users.add(text);
         }
-
-        int event = 0;
-        String gameID="";
-        String hometeam="",awayteam="";
-        try {
-            event = myparser.getEventType();
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
+        if(team4.isChecked())
+        {
+            String text=team4.getText().toString();
+            users.add(text);
         }
-        while (event != XmlPullParser.END_DOCUMENT)  {
-            String name=myparser.getName();
-            switch (event){
-                case XmlPullParser.START_TAG:
-                    if(name.equals("game")){
-                        gameID = myparser.getAttributeValue(null,"id");
-                    }
-                    break;
-
-                case XmlPullParser.END_TAG:
-                    if(name.equals("home")){
-                        hometeam = myparser.getAttributeValue(null,"name");
-                    }
-                    else if(name.equals("away")){
-                        awayteam =  myparser.getAttributeValue(null,"name");
-                        String gameName = hometeam+ " Vs "+awayteam+" "+gameID;
-                        al.add(gameName);
-                        gameStore.put(gameName,gameID);
-                    }
-                    break;
-            }
-            try {
-                event = myparser.next();
-            } catch (XmlPullParserException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        if(team5.isChecked())
+        {
+            String text=team5.getText().toString();
+            users.add(text);
+        }
+        if(team6.isChecked())
+        {
+            String text=team6.getText().toString();
+            users.add(text);
         }
 
-
-        //al.add(result.toString());
-        System.out.println("Debug: Display List Updated");
-
-        return;
+        Toast.makeText(Preferences.this,users.toString(),Toast.LENGTH_SHORT).show();
     }
 }

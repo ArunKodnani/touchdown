@@ -15,7 +15,7 @@ public class Welcome extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         String url = "https://bvlxit8h9a.execute-api.us-east-1.amazonaws.com/BetaStage/firstlogon";
-        String userID =AuthenticatorActivity.credentialsProvider.getIdentityId();
+        String userID = AuthenticatorActivity.credentialsProvider.getIdentityId();
         String query="";
         try {
             query = String.format("userID=%s", URLEncoder.encode(userID,charset));
