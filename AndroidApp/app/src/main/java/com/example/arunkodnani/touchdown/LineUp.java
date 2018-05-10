@@ -43,7 +43,7 @@ public class LineUp extends Fragment {
         // Instanciating an array list (you don't need to do this,
         // you already have yours).
         id=TeamDetails.id;
-        Toast.makeText(getActivity(),"In LineUp",Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity(),"In LineUp",Toast.LENGTH_LONG).show();
 //        Toast.makeText(getActivity(),TeamDetails.id,Toast.LENGTH_SHORT).show();
         String url = "https://api.sportradar.us/nfl-ot2/games/"+id+"/roster.xml";
         String api_key ="rr7maet8u7uataccpcqt5e5j";
@@ -62,7 +62,7 @@ public class LineUp extends Fragment {
         response = callAPI.execute(new Object[]{url,query,this});
 
 
-        al.add("Line up mofo");
+        //al.add("Line up mofo");
 
 
         // This is the array adapter, it takes the context of the activity as a

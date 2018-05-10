@@ -14,6 +14,11 @@ public class Welcome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String url = "https://bvlxit8h9a.execute-api.us-east-1.amazonaws.com/BetaStage/firstlogon";
         String userID = AuthenticatorActivity.credentialsProvider.getIdentityId();
         String query="";

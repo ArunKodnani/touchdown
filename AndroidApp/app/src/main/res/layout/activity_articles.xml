@@ -47,6 +47,7 @@
         android:layout_height="63dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/articles"
+        android:gravity="center"
         android:text="Top articles"
         android:background="#000000"
         android:textAlignment="center"

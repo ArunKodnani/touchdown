@@ -12,6 +12,7 @@ import android.support.v4.widget.*;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -25,14 +26,13 @@ public class TeamDetails extends AppCompatActivity {
     private final String[] PAGE_TITLES = new String[] {
             "Match Facts",
             "Line up",
-            "Some Other stuff"
-    };
+                };
 
     // The fragments that are used as the individual pages
     private final Fragment[] PAGES = new Fragment[] {
             new MatchFacts(),
             new LineUp(),
-            new Head2Head()
+            //new Head2Head()
     };
 
     // The ViewPager is responsible for sliding pages (fragments) in and out upon user input
@@ -46,11 +46,12 @@ public class TeamDetails extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
 
         //Set button text to team name
-        Button mButton=(Button)findViewById(R.id.team12);
+        Button mButton=findViewById(R.id.team12);
         mButton.setText(name);
 
         //Toast.makeText(getApplicationContext(),id,Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(),"In TeamDetails",Toast.LENGTH_LONG).show();
+        //
+        // Toast.makeText(getApplicationContext(),"In TeamDetails",Toast.LENGTH_LONG).show();
         // Set the Toolbar as the activity's app bar (instead of the default ActionBar)
         Toolbar toolbar = findViewById(R.id.toolbar);
         setActionBar(toolbar);

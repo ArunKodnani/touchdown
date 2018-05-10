@@ -67,7 +67,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Baltimore Ravens"
+                android:text="Atlanta Falcons"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -81,7 +81,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Carolina Panthers"
+                android:text="Baltimore Ravens"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -95,7 +95,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Chicago Bears"
+                android:text="Buffalo Bills"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -110,7 +110,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Buffalo Bills"
+                android:text="Carolina Panthers"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -124,7 +124,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Atlanta Falcons"
+                android:text="Chicago Bears"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -172,20 +172,6 @@
                 android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/team10"
-                android:layout_width="304dp"
-                android:layout_height="57dp"
-                android:layout_below="@+id/team9"
-                android:layout_centerHorizontal="true"
-                android:background="#000000"
-                android:buttonTint="@android:color/darker_gray"
-                android:checked="false"
-                android:text="Cleveland Browns"
-                android:textColor="#ffffff"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <CheckBox
                 android:id="@+id/team11"
                 android:layout_width="304dp"
                 android:layout_height="57dp"
@@ -194,7 +180,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Denver Broncos"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -208,7 +194,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Detroit Lions"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -222,7 +208,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Green Bay Packers"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -236,7 +222,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Houston Texans"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -250,7 +236,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Indianapolis Colts"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -264,7 +250,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Jacksonville Jaguars"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -278,7 +264,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Kansas City Chiefs"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -292,7 +278,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Miami Dolphins"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -306,7 +292,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Minnesota Vikings"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -320,7 +306,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="New England Patriots"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -334,7 +320,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="New Orleans Saints"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -348,7 +334,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="New York Giants"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -362,7 +348,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="New York Jets"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -376,7 +362,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Oakland Raiders"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -390,7 +376,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Philadelphia Eagles"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -404,7 +390,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Pittsburgh Steelers"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -418,7 +404,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="San Diego Chargers"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -432,7 +418,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="San Francisco 49ers"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -446,7 +432,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Seattle Seahawks"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -460,7 +446,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="St. Louis Rams"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -474,7 +460,7 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Tampa Bay Buccaneers"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -488,21 +474,21 @@
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Tennessee Titans"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/team33"
+                android:id="@+id/team10"
                 android:layout_width="304dp"
                 android:layout_height="57dp"
-                android:layout_below="@+id/team32"
+                android:layout_below="@+id/team9"
                 android:layout_centerHorizontal="true"
                 android:background="#000000"
                 android:buttonTint="@android:color/darker_gray"
                 android:checked="false"
-                android:text="Cleveland Browns"
+                android:text="Washington Redskins"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -510,7 +496,7 @@
             <View android:id="@+id/fakeView"
             android:layout_width="10dp"
             android:layout_height="30dp"
-            android:layout_below="@+id/team33"/>
+            android:layout_below="@+id/team32"/>
 
         </RelativeLayout>
 

@@ -43,7 +43,7 @@ public class MatchFacts extends Fragment {
 
 
         String id=TeamDetails.id;
-        Toast.makeText(getActivity(),"In MatchFacts",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(),"In MatchFacts",Toast.LENGTH_SHORT).show();
 //        Toast.makeText(getActivity(),TeamDetails.id,Toast.LENGTH_SHORT).show();
         String url = "https://api.sportradar.us/nfl-ot2/games/"+id+"/boxscore.xml";
         String api_key ="rr7maet8u7uataccpcqt5e5j";
@@ -60,7 +60,7 @@ public class MatchFacts extends Fragment {
         Object response = null;
 
         response = callAPI.execute(new Object[]{url,query,this});
-        al.add("Match Facts mofo");
+        //al.add("Match Facts mofo");
 
 
         // This is the array adapter, it takes the context of the activity as a

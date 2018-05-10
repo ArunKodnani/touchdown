@@ -25,13 +25,10 @@ public class Head2Head extends Fragment {
         // you already have yours).
 
         id=TeamDetails.id;
-        Toast.makeText(getActivity(),"In head2Head",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(),"In head2Head",Toast.LENGTH_SHORT).show();
 //        Toast.makeText(getActivity(),TeamDetails.id,Toast.LENGTH_SHORT).show();
         List<String> al = new ArrayList<>();
-        al.add("Mead2Head mofo");
-
-
-        // This is the array adapter, it takes the context of the activity as a
+                // This is the array adapter, it takes the context of the activity as a
         // first parameter, the type of list view as a second parameter and your
         // array as a third parameter.
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, al);

@@ -36,7 +36,7 @@ public class Articles extends AppCompatActivity {
 //                this.getApplicationContext(), "identity-pool-id", Regions.US_EAST_1);
 
         al.clear();
-        al.add("Articles");
+        //al.add("Articles");
         lv = (ListView) findViewById(R.id.teamslist2);
         String url = "https://bvlxit8h9a.execute-api.us-east-1.amazonaws.com/BetaStage/getarticles";
         String userID ="2";
@@ -48,26 +48,21 @@ public class Articles extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
         ArticlesCall callAPI = new ArticlesCall();
         Object response = null;
         response =callAPI.execute(new Object[]{url,query,this});
 
-
-
-
-
-
-
-
-
-
     }
 
-    public void goToHome(View view) {
-        Intent intent;
-        intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+    public void nextActivity(View view) {
+        if(view.getId()==R.id.btnteams) {
+            Intent intent;
+            intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        else{
+            int response=2;
+        }
     }
 
     public void updateDisplayList(Object result) throws JSONException{
@@ -82,7 +77,7 @@ public class Articles extends AppCompatActivity {
         JSONObject data = almostdata.getJSONObject("data");
         JSONArray names = data.names();
 
-        al.add(AuthenticatorActivity.credentialsProvider.getIdentityId());
+        //al.add(AuthenticatorActivity.credentialsProvider.getIdentityId());
         for(int i=0;i<names.length();i++){
             JSONArray articleArray = data.getJSONArray(names.getString(i));
             JSONObject articleObject = articleArray.getJSONObject(0);
@@ -92,7 +87,7 @@ public class Articles extends AppCompatActivity {
             urlMap.put(articleObject.getString("Title"),articleObject.getString("URL"));
         }
         System.out.println("Debug:  "+names.toString());
-        al.add(names.toString());
+        //al.add(names.toString());
 
         //al.add(result.toString());
         System.out.println("Debug: Display List Updated");
@@ -137,12 +132,6 @@ public class Articles extends AppCompatActivity {
             }
         });
 
-
-
-
-
         return;
-
-
     }
 }
