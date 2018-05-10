@@ -101,6 +101,15 @@ public class Articles extends AppCompatActivity {
 
         lv.setAdapter(arrayAdapter);
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                Intent intent = new Intent(Articles.this, Webviewer.class);
+                intent.putExtra("id","http://www.tutorialspoint.com");
+                startActivity(intent);
+            }
+        });
+
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapter, View view, int position, long arg) {

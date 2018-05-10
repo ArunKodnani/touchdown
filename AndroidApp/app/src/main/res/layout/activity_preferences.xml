@@ -43,111 +43,474 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="30dp">
 
-        <CheckBox
-            android:id="@+id/team1"
-            android:layout_width="308dp"
-            android:layout_height="57dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:background="#000000"
-            android:buttonTint="@android:color/darker_gray"
-            android:checked="false"
-            android:text="Dallas Cowboys"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/team1"
+                android:layout_width="308dp"
+                android:layout_height="57dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Arizona Cardinals"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/team4"
-            android:layout_width="306dp"
-            android:layout_height="57dp"
-            android:layout_below="@+id/team3"
-            android:layout_centerHorizontal="true"
-            android:background="#000000"
-            android:buttonTint="@android:color/darker_gray"
-            android:checked="false"
-            android:text="Philadelphia Eagles"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/team4"
+                android:layout_width="306dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team3"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Baltimore Ravens"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/team5"
-            android:layout_width="304dp"
-            android:layout_height="57dp"
-            android:layout_below="@+id/team2"
-            android:layout_centerHorizontal="true"
-            android:background="#000000"
-            android:buttonTint="@android:color/darker_gray"
-            android:checked="false"
-            android:text="Oakland Raiders"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/team5"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team2"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Carolina Panthers"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/team6"
-            android:layout_width="304dp"
-            android:layout_height="57dp"
-            android:layout_below="@+id/team5"
-            android:layout_centerHorizontal="true"
-            android:background="#000000"
-            android:buttonTint="@android:color/darker_gray"
-            android:checked="false"
-            android:text="Seattle Seahawks"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/team6"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team5"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Chicago Bears"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
 
+            <CheckBox
+                android:id="@+id/team2"
+                android:layout_width="306dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team4"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Buffalo Bills"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/team2"
-            android:layout_width="306dp"
-            android:layout_height="57dp"
-            android:layout_below="@+id/team4"
-            android:layout_centerHorizontal="true"
-            android:background="#000000"
-            android:buttonTint="@android:color/darker_gray"
-            android:checked="false"
-            android:text="Green Bay Packers"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/team3"
+                android:layout_width="306dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team1"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Atlanta Falcons"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/team3"
-            android:layout_width="306dp"
-            android:layout_height="57dp"
-            android:layout_below="@+id/team1"
-            android:layout_centerHorizontal="true"
-            android:background="#000000"
-            android:buttonTint="@android:color/darker_gray"
-            android:checked="false"
-            android:text="New England Patriots"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/team7"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team6"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cincinnati Bengals"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/team7"
-            android:layout_width="304dp"
-            android:layout_height="57dp"
-            android:layout_below="@+id/team6"
-            android:layout_centerHorizontal="true"
-            android:background="#000000"
-            android:buttonTint="@android:color/darker_gray"
-            android:checked="false"
-            android:text="Minnesota Vikings"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/team8"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team7"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <View android:id="@+id/fakeView"
+            <CheckBox
+                android:id="@+id/team9"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team8"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Dallas Cowboys"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team10"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team9"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team11"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team10"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team12"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team11"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team13"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team12"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team14"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team13"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team15"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team14"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team16"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team15"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team17"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team16"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team18"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team17"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team19"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team18"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team20"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team19"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team21"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team20"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team22"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team21"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team23"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team22"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team24"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team23"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team25"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team24"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team26"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team25"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team27"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team26"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team28"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team27"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team29"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team28"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team30"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team29"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team31"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team30"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team32"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team31"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/team33"
+                android:layout_width="304dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/team32"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:buttonTint="@android:color/darker_gray"
+                android:checked="false"
+                android:text="Cleveland Browns"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <View android:id="@+id/fakeView"
             android:layout_width="10dp"
             android:layout_height="30dp"
-            android:layout_below="@+id/team7"/>
+            android:layout_below="@+id/team33"/>
 
         </RelativeLayout>
 
