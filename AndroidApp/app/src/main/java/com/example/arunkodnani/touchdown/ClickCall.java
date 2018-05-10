@@ -11,11 +11,11 @@ import java.util.Scanner;
 import static com.example.arunkodnani.touchdown.MainActivity.charset;
 
 public class ClickCall extends AsyncTask {
-    Articles a;
+    //Articles a;
     @Override
     protected Object doInBackground(Object[] objects) {
         System.out.println("Debig: input to async call"+objects[0]+" "+objects[1]);
-        a = (Articles) objects[2];
+        //a = (Articles) objects[2];
         HttpURLConnection connection = null;
         try {
             connection = (HttpURLConnection) new URL(objects[0].toString() + "?" + objects[1].toString()).openConnection();
