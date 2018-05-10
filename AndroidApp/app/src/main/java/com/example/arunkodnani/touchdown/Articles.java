@@ -72,6 +72,7 @@ public class Articles extends AppCompatActivity {
 
     public void updateDisplayList(Object result) throws JSONException{
         final HashMap<String,String> summaries = new HashMap<>();
+        final HashMap<String,String> articleid = new HashMap<>();
         JSONObject reader=null;
         reader = new JSONObject(result.toString());
         JSONObject messages = reader.getJSONObject("messages");
@@ -86,6 +87,7 @@ public class Articles extends AppCompatActivity {
             JSONObject articleObject = articleArray.getJSONObject(0);
             al.add(articleObject.getString("Title"));
             summaries.put(articleObject.getString("Title"),articleObject.getString("Summary"));
+            //summaries.put(articleObject.getString("Title"),names.getString(i));
         }
         System.out.println("Debug:  "+names.toString());
         al.add(names.toString());
@@ -106,6 +108,10 @@ public class Articles extends AppCompatActivity {
                 return true;
             }
         });
+
+
+
+
 
         return;
 

@@ -40,7 +40,7 @@ public class AuthenticatorActivity extends AppCompatActivity {
                        Regions.US_EAST_1 // Region
                 );
                 //System.out.println("Check credentials: "+credentialsProvider.getIdentityId()+" " +credentialsProvider.getIdentityPoolId());
-                signinUI.login(AuthenticatorActivity.this, MainActivity.class).authUIConfiguration(config).execute();
+                signinUI.login(AuthenticatorActivity.this, Welcome.class).authUIConfiguration(config).execute();
             }
         }).execute();
     }

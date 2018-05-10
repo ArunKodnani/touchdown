@@ -24,8 +24,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Articles" />
-        <activity android:name=".TeamDetails"></activity>
-        <activity android:name=".Preferences"></activity>
+        <activity android:name=".TeamDetails" />
+        <activity android:name=".Preferences" />
+        <activity android:name=".Welcome"></activity>
     </application>
 
 </manifest>
